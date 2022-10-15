@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_day1/home/place/placeDetails.dart';
+import 'package:clicktravel/home/place/placeDetails.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 class SwiperComponent extends StatelessWidget {

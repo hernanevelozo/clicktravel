@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "clicktravel" "\0"
-            VALUE "FileDescription", "lddm_sprint02" "\0"
+            VALUE "FileDescription", "sprint02" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "lddm_sprint02" "\0"
+            VALUE "InternalName", "sprint02" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 clicktravel. All rights reserved." "\0"
-            VALUE "OriginalFilename", "lddm_sprint02.exe" "\0"
-            VALUE "ProductName", "lddm_sprint02" "\0"
+            VALUE "OriginalFilename", "sprint02.exe" "\0"
+            VALUE "ProductName", "sprint02" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

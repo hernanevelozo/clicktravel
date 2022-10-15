@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_day1/home/components/categoriesDetails.dart';
+import 'package:clicktravel/home/components/categoriesDetails.dart';
 
 class TabbarComponent extends StatelessWidget {
   final itemList = [

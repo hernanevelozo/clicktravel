@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_day1/home/components/categories.dart';
+import 'package:clicktravel/home/components/categories.dart';
 
 import 'components/navBar.dart';
 import 'components/subPlaces.dart';
