@@ -13,7 +13,7 @@ class FoodListItemComponent extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(
-              "https://picsum.photos/300/500?random=$index",
+              "https://picsum.photos/600/1000?random=$index",
             ),
             fit: BoxFit.cover,
           ),
@@ -32,13 +32,28 @@ class FoodListItemComponent extends StatelessWidget {
           children: [],
         ),
       ),
-      Column(
+      Row(
         children: [
-          SizedBox(height: 150),
-          Icon(
-            Icons.preview,
-            color: Colors.black87,
-            size: 80,
+          SizedBox(
+            child: Card(
+              color: Color.fromRGBO(60, 60, 60, 0.2),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.location_on,
+                      color: Colors.white,
+                      size: 18,
+                    ),
+                    Text(
+                      " Lorem, Ipsum",
+                      style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.normal)
+                    ),
+                  ]
+                ),
+              ),
+            ),
           ),
         ],
       ),

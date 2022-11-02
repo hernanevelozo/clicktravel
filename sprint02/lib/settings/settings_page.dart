@@ -43,7 +43,8 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavBar(index: 2),
-      backgroundColor: Color(0xf9f9f9ff),
+      //backgroundColor: Color(0xf9f9f9ff),
+      backgroundColor: Colors.white,
       body: Container(
         padding: const EdgeInsets.all(10),
         child: ListView(

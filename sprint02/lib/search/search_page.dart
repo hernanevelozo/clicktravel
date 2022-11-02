@@ -36,7 +36,8 @@ class _SearchState extends State<Search> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavBar(index: 1),
-      backgroundColor: Color(0xf9f9f9ff),
+      //backgroundColor: Color(0xf9f9f9ff),
+      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.only(left:16, top: 40, right: 16),
         child: Column(
@@ -71,8 +72,8 @@ class _SearchState extends State<Search> {
                 fillColor: Colors.white,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
-                  //borderSide: const BorderSide(color: Colors.grey, width: 0.0),
-                  borderSide: BorderSide.none
+                  borderSide: const BorderSide(color: Colors.grey, width: 0.0),
+                  //borderSide: BorderSide.none
                 ),
                 hintText: "Ex: Diamantina, Brazil",
                 prefixIcon: Icon(Icons.search),

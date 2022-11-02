@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="clicktravel.lddm_sprint02">
+    package="sprint02.sprint02">
    <application
-        android:label="lddm_sprint02"
+        android:label="sprint02"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
