@@ -1,19 +1,18 @@
-## SPRINT 02 - Laboratório de Desenvolvimento para Dispositivos Móveis (LDDM)
-### Flutter Apps - Sprint 02
+## SPRINT 03 - Laboratório de Desenvolvimento para Dispositivos Móveis (LDDM)
+### Flutter Apps - Sprint 03
 
 Projeto dedicado ao segundo sprint da disciplina de LDDM.
 
 
 ## Configurações de ambiente
 ### Versões
-- Flutter: 3.3.2
-- Dart: 2.18.1 
+- Flutter: 3.3.6
+- Dart: 2.18.2
 - DevTools: 2.15.0
 - Gradle: 7.1.2
 - ext-kotlin: 1.6.10
 
 ### Sistemas Operacionais testados
-- Windows 11
 - Ubuntu 22.04.1
 
 
