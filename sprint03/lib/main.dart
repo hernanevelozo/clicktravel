@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'login/login.dart';
 import 'home/home_page.dart';
-import 'search/search_page.dart';
+import 'search/presentation/pages/sp.dart';
+//import 'search/presentation/pages/search_places.dart';
 import 'settings/settings_page.dart';
 
 
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/search": (context) => Search(),
+        //"/search": (context) => SearchPage(),
         "/settings": (context) => Settings(),
         "/login": (context) => Login(),
       },

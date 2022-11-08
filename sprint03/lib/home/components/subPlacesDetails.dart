@@ -38,20 +38,19 @@ class FoodListItemComponent extends StatelessWidget {
             child: Card(
               color: Color.fromRGBO(60, 60, 60, 0.2),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.location_on,
-                      color: Colors.white,
-                      size: 18,
-                    ),
-                    Text(
-                      " Lorem, Ipsum",
-                      style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.normal)
-                    ),
-                  ]
-                ),
+                padding: const EdgeInsets.all(6.0),
+                child: Row(children: [
+                  Icon(
+                    Icons.location_on,
+                    color: Colors.white,
+                    size: 18,
+                  ),
+                  Text(" Lorem, Ipsum",
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.normal)),
+                ]),
               ),
             ),
           ),
