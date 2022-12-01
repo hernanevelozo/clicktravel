@@ -26,6 +26,12 @@ Projeto dedicado ao segundo sprint da disciplina de LDDM.
 
 * [Me. Ilo Amy Saldanha Rivero](https://www.escavador.com/sobre/4550958/ilo-amy-saldanha-rivero)
 
+## Diagrama Entidade Relacionamento do Banco de Dados
+<img src="https://https://drive.google.com/uc?id=1eUIxzP3hTbMVj8S4u-zmNOIjltlEwkc7">
+
+## Esquemático da Implementação no App
+<img src="https://https://drive.google.com/uc?id=1_xIx8iPAZzpv1FJmUIQQEJzHd2jOvs-E">
+
 ## Telas
 
 <table>

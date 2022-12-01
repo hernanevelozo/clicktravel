@@ -1,28 +1,19 @@
 ## SPRINT 03 - Laboratório de Desenvolvimento para Dispositivos Móveis (LDDM)
-### Flutter Apps - Sprint 03
+### Clicktravel - Sprint 03
 
 Projeto dedicado ao segundo sprint da disciplina de LDDM.
 
 
 ## Configurações de ambiente
 ### Versões
-- Flutter: 3.3.6
-- Dart: 2.18.2
+- Flutter: 3.3.8
+- Dart: 2.18.4
 - DevTools: 2.15.0
 - Gradle: 7.1.2
 - ext-kotlin: 1.6.10
 
 ### Sistemas Operacionais testados
 - Ubuntu 22.04.1
-
-
-## Telas do app
-- [✔️] 🌐 1 > - Login
-- [✔️] ♾️ 2 > - Principal
-- [✔️] ♾️ 3 > - Detalhes
-- [✔️] 🌐 4 > - Pesquisa
-- [✔️] 🌐 5 > - Configurações
-
 
 ## Integrantes
 
@@ -35,7 +26,6 @@ Projeto dedicado ao segundo sprint da disciplina de LDDM.
 
 * [Me. Ilo Amy Saldanha Rivero](https://www.escavador.com/sobre/4550958/ilo-amy-saldanha-rivero)
 
-
 ## Telas
 
 <table>
@@ -46,7 +36,6 @@ Projeto dedicado ao segundo sprint da disciplina de LDDM.
     <td><img src="https://user-images.githubusercontent.com/88516429/192123675-405f7f22-648c-4fcd-a663-dda03d020791.png" height = "480" width="270"></td>
   </tr>
 </table>
-
 
 ## Licença
 
