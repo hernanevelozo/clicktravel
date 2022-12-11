@@ -15,6 +15,7 @@ Projeto dedicado ao segundo sprint da disciplina de LDDM.
 ### Sistemas Operacionais testados
 - Ubuntu 22.04.1
 
+
 ## Integrantes
 
 * [Hernane Velozo](https://github.com/hernanevelozo)
@@ -22,9 +23,11 @@ Projeto dedicado ao segundo sprint da disciplina de LDDM.
 * [Gustavo Castro](https://github.com/GustavoVCastro)
 * [Pedro Igor](https://github.com/pedroigorreis)
 
+
 ## Professor
 
 * [Me. Ilo Amy Saldanha Rivero](https://www.escavador.com/sobre/4550958/ilo-amy-saldanha-rivero)
+
 
 ## Telas
 
