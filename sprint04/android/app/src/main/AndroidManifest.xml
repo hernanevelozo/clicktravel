@@ -1,8 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-     package="sprint03.sprint03">
-     <uses-permission android:name="android.permission.INTERNET"/>
-     <application
-        android:label="sprint03"
+    package="com.example.sprint04">
+   <application
+        android:label="sprint04"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

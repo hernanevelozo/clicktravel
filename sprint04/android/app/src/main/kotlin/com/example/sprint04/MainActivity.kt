@@ -1,4 +1,4 @@
-package sprint03.sprint03
+package com.example.sprint04
 
 import io.flutter.embedding.android.FlutterActivity
 
