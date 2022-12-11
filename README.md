@@ -1,13 +1,13 @@
-## SPRINT 03 - Laboratório de Desenvolvimento para Dispositivos Móveis (LDDM)
-### Clicktravel - Sprint 03
+## SPRINT 04 - Laboratório de Desenvolvimento para Dispositivos Móveis (LDDM)
+### Clicktravel - Sprint 04
 
 Projeto dedicado ao segundo sprint da disciplina de LDDM.
 
 
 ## Configurações de ambiente
 ### Versões
-- Flutter: 3.3.8
-- Dart: 2.18.4
+- Flutter: 3.3.9
+- Dart: 2.18.5
 - DevTools: 2.15.0
 - Gradle: 7.1.2
 - ext-kotlin: 1.6.10
@@ -26,11 +26,16 @@ Projeto dedicado ao segundo sprint da disciplina de LDDM.
 
 * [Me. Ilo Amy Saldanha Rivero](https://www.escavador.com/sobre/4550958/ilo-amy-saldanha-rivero)
 
-## Diagrama Entidade Relacionamento do Banco de Dados
-<img src="https://drive.google.com/uc?id=1eUIxzP3hTbMVj8S4u-zmNOIjltlEwkc7">
+## Telas
 
-## Esquemático da Implementação no App
-<img src="https://drive.google.com/uc?id=1_xIx8iPAZzpv1FJmUIQQEJzHd2jOvs-E">
+<table>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/88516429/192123673-a67915f4-f35d-4a10-9931-d6eae4063741.png" height = "480" width="270"></td>
+    <td><img src="https://user-images.githubusercontent.com/88516429/192123677-7d47b789-c8c1-43e7-a144-93272ad5ba99.png" height = "480" width="270"></td>
+    <td><img src="https://user-images.githubusercontent.com/88516429/192123676-5f6877d8-4bfd-4352-8fc6-bccbc1219b86.png" height = "480" width="270"></td>
+    <td><img src="https://user-images.githubusercontent.com/88516429/192123675-405f7f22-648c-4fcd-a663-dda03d020791.png" height = "480" width="270"></td>
+  </tr>
+</table>
 
 ## Telas
 

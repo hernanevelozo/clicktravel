@@ -1,13 +1,13 @@
-## SPRINT 03 - Laboratório de Desenvolvimento para Dispositivos Móveis (LDDM)
-### Clicktravel - Sprint 03
+## SPRINT 04 - Laboratório de Desenvolvimento para Dispositivos Móveis (LDDM)
+### Clicktravel - Sprint 04
 
 Projeto dedicado ao segundo sprint da disciplina de LDDM.
 
 
 ## Configurações de ambiente
 ### Versões
-- Flutter: 3.3.8
-- Dart: 2.18.4
+- Flutter: 3.3.9
+- Dart: 2.18.5
 - DevTools: 2.15.0
 - Gradle: 7.1.2
 - ext-kotlin: 1.6.10
@@ -25,12 +25,6 @@ Projeto dedicado ao segundo sprint da disciplina de LDDM.
 ## Professor
 
 * [Me. Ilo Amy Saldanha Rivero](https://www.escavador.com/sobre/4550958/ilo-amy-saldanha-rivero)
-
-## Diagrama Entidade Relacionamento do Banco de Dados
-<img src="https://drive.google.com/uc?id=1eUIxzP3hTbMVj8S4u-zmNOIjltlEwkc7">
-
-## Esquemático da Implementação no App
-<img src="https://drive.google.com/uc?id=1_xIx8iPAZzpv1FJmUIQQEJzHd2jOvs-E">
 
 ## Telas
 
