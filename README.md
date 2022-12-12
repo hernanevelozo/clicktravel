@@ -14,6 +14,7 @@ Projeto dedicado ao segundo sprint da disciplina de LDDM.
 
 ### Sistemas Operacionais testados
 - Ubuntu 22.04.1
+- Windows 11 v22H2
 
 
 ## Integrantes
