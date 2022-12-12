@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "871618972215",
+    "firebase_url": "https://clicktravel-f2302-default-rtdb.firebaseio.com",
+    "project_id": "clicktravel-f2302",
+    "storage_bucket": "clicktravel-f2302.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871618972215:android:ce8048854c04b47c204db2",
+        "android_client_info": {
+          "package_name": "com.example.sprint04"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871618972215-rum6l7r1p1glj9snq3qhr70eo8v3gobr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhyb0byFldMdmPNn9cQyhzAZfXYDYel6Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871618972215-rum6l7r1p1glj9snq3qhr70eo8v3gobr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "871618972215-16qcbglsdjpppqu3kvrlnic1e222pq5g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sprint04"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

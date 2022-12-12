@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+//import 'package:firebase_core/firebase_core.dart';
+//import 'firebase_options.dart';
+
 import 'login/login.dart';
 import 'home/home_page.dart';
 import 'search/presentation/pages/sp.dart';
@@ -8,11 +11,15 @@ import 'settings/settings_page.dart';
 
 
 void main() {
+  //await Firebase.initializeApp(
+    //options: DefaultFirebaseOptions.currentPlatform,
+  //);
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
+
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
