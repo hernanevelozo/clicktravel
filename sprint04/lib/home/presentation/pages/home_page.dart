@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:clicktravel/home/components/categories.dart';
 
-import 'components/navBar.dart';
-import 'components/subPlaces.dart';
-import 'components/HomeScreen.dart';
+import 'package:clicktravel/home/presentation/widgets/categories.dart';
+import 'package:clicktravel/home/presentation/widgets/subPlaces.dart';
+import 'package:clicktravel/share/navBar.dart';
+import '../widgets/HomeScreen.dart';
 
 class MyHomePage extends StatelessWidget {
   @override

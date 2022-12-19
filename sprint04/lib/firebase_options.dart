@@ -44,7 +44,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBCfD9hikwf9pF-etk0yPDLG-lnsfhLAU0',
+    apiKey: 'AIzaSyC2hig7gzS7WheCE4p14wmoqhXPWOS2PHU',
     appId: '1:871618972215:web:54adaf3cc571862f204db2',
     messagingSenderId: '871618972215',
     projectId: 'clicktravel-f2302',
@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAhyb0byFldMdmPNn9cQyhzAZfXYDYel6Q',
+    apiKey: 'AIzaSyCRPoemZBwJMtdaxrulCLnJz4eVPRij_tk',
     appId: '1:871618972215:android:ce8048854c04b47c204db2',
     messagingSenderId: '871618972215',
     projectId: 'clicktravel-f2302',
@@ -64,7 +64,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB8NmhD70uMKP9p0nxN9XpEVXH8qO8KmfY',
+    apiKey: 'AIzaSyCH1zE7L5HmGuoTa8lkFyo9ebzDmkbHLL8',
     appId: '1:871618972215:ios:26386653726f14c6204db2',
     messagingSenderId: '871618972215',
     projectId: 'clicktravel-f2302',
@@ -75,7 +75,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyB8NmhD70uMKP9p0nxN9XpEVXH8qO8KmfY',
+    apiKey: 'AIzaSyCH1zE7L5HmGuoTa8lkFyo9ebzDmkbHLL8',
     appId: '1:871618972215:ios:26386653726f14c6204db2',
     messagingSenderId: '871618972215',
     projectId: 'clicktravel-f2302',

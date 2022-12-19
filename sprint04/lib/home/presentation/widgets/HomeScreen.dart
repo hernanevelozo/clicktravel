@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:clicktravel/home/place/placeDetails.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+
+import 'package:clicktravel/details/presentation/pages/details_page.dart';
 
 class SwiperComponent extends StatelessWidget {
   @override
@@ -38,27 +39,28 @@ class SwiperComponent extends StatelessWidget {
             alignment: Alignment.bottomLeft,
             children: [
               Image.network(
-                "https://picsum.photos/500/500?random=$index",
+                "https://firebasestorage.googleapis.com/v0/b/clicktravel-f2302.appspot.com/o/assets%2Ffront-page.png?alt=media&token=aef5cbd5-e027-44c4-9a25-d1bab1981c0c",
                 height: _size.height / 1.8,
                 fit: BoxFit.cover,
                 width: double.infinity,
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 30, left: 30),
+                padding: EdgeInsets.only(bottom: 15, left: 30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "Procurando localização...",
+                      "Explorar",
                       style: TextStyle(
                         fontSize: 24,
                         color: Colors.white,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     SizedBox(height: 5),
                     Text(
-                      "Searching...",
+                      "Encontre o lugar exótico perfeito para você",
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.white,

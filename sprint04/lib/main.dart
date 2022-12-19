@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
-//import 'package:firebase_core/firebase_core.dart';
-//import 'firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_database/firebase_database.dart';
+import 'firebase_options.dart';
 
-import 'login/login.dart';
-import 'home/home_page.dart';
-import 'search/presentation/pages/sp.dart';
-//import 'search/presentation/pages/search_places.dart';
-import 'settings/settings_page.dart';
+import 'package:clicktravel/home/presentation/pages/home_page.dart';
+import 'package:clicktravel/search/presentation/pages/search_page.dart';
+import 'package:clicktravel/settings/presentation/pages/settings_page.dart';
+import 'package:clicktravel/login/presentation/pages/login_page.dart';
 
 
-void main() {
-  //await Firebase.initializeApp(
-    //options: DefaultFirebaseOptions.currentPlatform,
-  //);
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -38,7 +39,6 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/search": (context) => Search(),
-        //"/search": (context) => SearchPage(),
         "/settings": (context) => Settings(),
         "/login": (context) => Login(),
       },

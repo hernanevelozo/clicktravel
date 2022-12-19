@@ -33,12 +33,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
             "/settings",
           );
           break;
-        case 3:
-          Navigator.pushNamed(
-            context,
-            "/login",
-          );
-          break;
+        //case 3:
+          //Navigator.pushNamed(
+            //context,
+            //"/login",
+          //);
+          //break;
       }
     });
   }
@@ -77,11 +77,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     g_index: index,
                     icon: CupertinoIcons.gear,
                   ),
-                  _bottomAppBarItem(
-                    index: 3,
-                    g_index: index,
-                    icon: CupertinoIcons.person_alt_circle,
-                  ),
+                  //_bottomAppBarItem(
+                    //index: 3,
+                    //g_index: index,
+                    //icon: CupertinoIcons.person_alt_circle,
+                  //),
                 ],
               ),
             ),

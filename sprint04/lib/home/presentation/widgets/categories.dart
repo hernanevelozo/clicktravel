@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:clicktravel/home/components/categoriesDetails.dart';
+import 'package:clicktravel/home/presentation/widgets/categoriesDetails.dart';
 
 class TabbarComponent extends StatelessWidget {
   final itemList = [
@@ -9,12 +9,12 @@ class TabbarComponent extends StatelessWidget {
       'active': true,
     },
     {
-      'label': 'Minha Lista',
+      'label': 'Meus Lugares',
       'icon': CupertinoIcons.square_favorites_alt,
       'active': false,
     },
     {
-      'label': 'Minhas Compras',
+      'label': 'Meus Pacotes',
       'icon': CupertinoIcons.briefcase,
       'active': false,
     },

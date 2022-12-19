@@ -1,5 +1,3 @@
-// ignore_for_file: missing_required_param
-
 import 'package:flutter/material.dart';
 
 class FoodListItemComponent extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../home/components/navBar.dart';
-import 'package:clicktravel/login/login.dart';
+import 'package:clicktravel/share/navBar.dart';
+import 'package:clicktravel/login/presentation/pages/login_page.dart';
 
 class Settings extends StatefulWidget {
   @override
