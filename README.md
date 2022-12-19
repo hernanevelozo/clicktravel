@@ -34,10 +34,9 @@ Projeto dedicado ao segundo sprint da disciplina de LDDM.
 
 <table>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/88516429/192123673-a67915f4-f35d-4a10-9931-d6eae4063741.png" height = "480" width="270"></td>
-    <td><img src="https://user-images.githubusercontent.com/88516429/192123677-7d47b789-c8c1-43e7-a144-93272ad5ba99.png" height = "480" width="270"></td>
-    <td><img src="https://user-images.githubusercontent.com/88516429/192123676-5f6877d8-4bfd-4352-8fc6-bccbc1219b86.png" height = "480" width="270"></td>
-    <td><img src="https://user-images.githubusercontent.com/88516429/192123675-405f7f22-648c-4fcd-a663-dda03d020791.png" height = "480" width="270"></td>
+    <td><img src="https://firebasestorage.googleapis.com/v0/b/clicktravel-f2302.appspot.com/o/assets%2Fscreen1.gif?alt=media&token=488596f5-d384-4621-a3a8-3d851b0d1909" height = "573" width="264"></td>
+    <td><img src="https://firebasestorage.googleapis.com/v0/b/clicktravel-f2302.appspot.com/o/assets%2Fscreen2.gif?alt=media&token=4fff344e-1fa0-434b-97a2-3e7699b663a3" height = "573" width="264"></td>
+    <td><img src="https://firebasestorage.googleapis.com/v0/b/clicktravel-f2302.appspot.com/o/assets%2Fscreen3.gif?alt=media&token=a2f91fd4-4115-44f0-abb5-a4ce792e3940" height = "573" width="264"></td>
   </tr>
 </table>
 
