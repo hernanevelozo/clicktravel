@@ -8,7 +8,7 @@ class FoodListComponent extends StatelessWidget {
     return GridView.builder(
       padding: EdgeInsets.only(right: 10, left: 10),
       shrinkWrap: true,
-      itemCount: 6,
+      //itemCount: 6,
       physics: NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 1,

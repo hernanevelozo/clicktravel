@@ -2,14 +2,17 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'package:clicktravel/home/models/place_element.dart';
+
 class PlacePage extends StatelessWidget {
-  final int index;
+  //final int index;
+  PlaceElement place = new PlaceElement();
 
-  const PlacePage({Key key, this.index}) : super(key: key);
-
+  PlacePage({Key key, this.place}) : super(key: key);
+  
   @override
   Widget build(BuildContext context) {
-    Size _size = MediaQuery.of(context).size;
+    //Size _size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -18,10 +21,10 @@ class PlacePage extends StatelessWidget {
           alignment: Alignment.topLeft,
           children: [
             Image.network(
-              "https://picsum.photos/600/1000?random=$index",
+              place.placeImageUrl,
               fit: BoxFit.cover,
               width: double.infinity,
-              height: _size.height / 1.25,
+              //height: _size.height / 1.25,
             ),
             Container(
               height: double.infinity,

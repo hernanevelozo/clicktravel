@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 import 'package:clicktravel/search/presentation/widgets/place_list.dart';
 import 'package:clicktravel/search/database/search_operations.dart';
-import 'package:clicktravel/search/models/place_element.dart';
+//import 'package:clicktravel/search/models/place_element.dart';
 import 'package:clicktravel/share/navBar.dart';
 
 class Search extends StatefulWidget {
