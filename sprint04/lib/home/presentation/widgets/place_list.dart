@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 //import 'package:path/path.dart';
 
-import 'package:clicktravel/details/presentation/pages/details_page.dart';
+import 'package:clicktravel/details/presentation/pages/details_page-.dart';
 //import 'package:clicktravel/search/database/search_operations.dart';
 import 'package:clicktravel/search/models/place_element.dart';
 
@@ -42,7 +42,7 @@ class PlacesList extends StatelessWidget {
                 splashColor: Colors.black26,
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => PlacePage()));
+                    MaterialPageRoute(builder: (context) => Details(placeElement: placeElements[index])));
                 },
               
                 child: Ink(

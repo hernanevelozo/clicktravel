@@ -177,7 +177,7 @@ class _HomeState extends State<Home> {
             //]
             //),),
             Column(children: [
-              if (_myState == 0)
+              //if (_myState == 0)
                 FutureBuilder(
                   future: searchOperations.getAllPlaces(),
                   builder: (context, snapshot) {
@@ -190,20 +190,20 @@ class _HomeState extends State<Home> {
                           );
                   },
                 ),
-              if (_myState == 1)
-                FutureBuilder(
-                  future: searchOperations.searchPlaces(keyword),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasError) print('error');
-                    var data = snapshot.data;
-                    print(_myState);
-                    return snapshot.hasData
-                        ? PlacesList(data)
-                        : new Center(
-                            child: Text('Destino não encontrado'),
-                          );
-                  },
-                ),
+              //if (_myState == 1)
+                //FutureBuilder(
+                  //future: searchOperations.searchPlaces(keyword),
+                  //builder: (context, snapshot) {
+                    //if (snapshot.hasError) print('error');
+                    //var data = snapshot.data;
+                    //print(_myState);
+                    //return snapshot.hasData
+                        //? PlacesList(data)
+                        //: new Center(
+                            //child: Text('Destino não encontrado'),
+                          //);
+                  //},
+                //),
             ]),
           ],
         ),

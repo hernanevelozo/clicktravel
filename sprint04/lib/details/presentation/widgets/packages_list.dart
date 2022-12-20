@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 //import 'package:path/path.dart';
 
 import 'package:clicktravel/details/presentation/pages/details_page-.dart';
+import 'package:clicktravel/details/models/package_element.dart';
 import 'package:clicktravel/search/database/search_operations.dart';
-import 'package:clicktravel/search/models/place_element.dart';
 
-class PlacesList extends StatelessWidget {
-  final List<PlaceElement> placeElements;
-  final SearchOperations placesOperations = SearchOperations();
+class PackagesList extends StatelessWidget {
+  final SearchOperations packageOperations = SearchOperations();
+  final List<PackageElement> packageElements;
 
-  PlacesList(List<PlaceElement> this.placeElements, {Key key})
-      : super(key: key);
+  PackagesList(List<PackageElement> this.packageElements, {Key key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +20,9 @@ class PlacesList extends StatelessWidget {
       child: ListView.separated(
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
-        itemCount: placeElements.length,
+        itemCount: packageElements.length,
         padding: const EdgeInsets.all(6.0),
-        separatorBuilder: (BuildContext context, int index) => const Divider(),
+        separatorBuilder: (BuildContext context, int index) => const Divider(height: 20,),
         //padding: EdgeInsets.symmetric(vertical: 30),
         itemBuilder: (BuildContext context, int index) {
           return Material (
@@ -36,10 +35,10 @@ class PlacesList extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               splashColor: Colors.black26,
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Details(placeElement: placeElements[index])));
+                //Navigator.push(context,
+                    //MaterialPageRoute(builder: (context) => PlacePage()));
               },
-              child: Row (
+              child: Column (
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -57,15 +56,14 @@ class PlacesList extends StatelessWidget {
                     //'${placeElements[index].placeName}',
                     //style: TextStyle(fontSize: 18, color: Colors.black)
                     //),
-                 Row(mainAxisSize: MainAxisSize.max, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <Widget>[ 
-
+                 Row(mainAxisSize: MainAxisSize.max, mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[ 
                   Container(
                     child: IntrinsicWidth(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Ink.image(
-                          image: NetworkImage('${placeElements[index].placeThumbUrl}'),
+                          image: NetworkImage('${packageElements[index].packageImageUrl}'),
                           height: 50,
                           width: 50,
                           fit: BoxFit.scaleDown,
@@ -79,7 +77,10 @@ class PlacesList extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ListTile(title: Text('${placeElements[index].placeName}', style: TextStyle(fontWeight: FontWeight.bold),), subtitle: Text('${placeElements[index].placeCountry}')),
+                        if (packageElements[index].packageNights == 1)
+                          ListTile(title: Text('${packageElements[index].packageNights } diária', style: TextStyle(fontWeight: FontWeight.bold),), subtitle: Text('${packageElements[index].companyName}')),
+                        if (packageElements[index].packageNights > 1 || packageElements[index].packageNights < 1 )
+                          ListTile(title: Text('${packageElements[index].packageNights } diárias', style: TextStyle(fontWeight: FontWeight.bold),), subtitle: Text('${packageElements[index].companyName}')),
                         //ListTile(title: Text('${placeElements[index].placeCountry}'))
                       ]
                     )
@@ -87,11 +88,36 @@ class PlacesList extends StatelessWidget {
                   //SizedBox(width: 6,),
                 ],
                 ),
-               
+                  
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Expanded(
+                    child: Text(
+                      //'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+                      "${packageElements[index].packageInfo}",
+                      style: TextStyle(fontSize: 13),
+                      softWrap: false,
+                      maxLines: 10,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.justify,
+                    ),
+                  ),
+                    //Text(
+                      //"${placeElement.placeDescr}",
+                      //maxLines: 10,
+                      //style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+                    //),
+                  ],
+                ),
+
+                SizedBox(height: 10,),
+
+                 Row(mainAxisSize: MainAxisSize.max, mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[ 
                   Container(
                     //margin: EdgeInsets.all(30),
-                    width: 20,
-                    height: 20,
+                    width: 100,
+                    height: 30,
                     decoration: BoxDecoration(
                       color: Colors.lightBlue,
                       //shape: BoxShape.circle
@@ -103,16 +129,16 @@ class PlacesList extends StatelessWidget {
                       children: [
                         //ListTile(title: Text('${placeElements[index].placeName}'), subtitle: Text('${placeElements[index].placeCountry}')),
                         //ListTile(title: Text('${placeElements[index].placeCountry}'))
-                        Text('${placeElements[index].packagesNumber}', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+                        Text('R\$ ${packageElements[index].packagePrice.toStringAsFixed(2)}', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
                       ]
-
 
                     )
                   ),),
-
-                ])
-              )
-            ),);
+                  ]),
+                  
+                  SizedBox(height: 10,),
+                ]
+            ),),));
             //onPressed: () {
               //Navigator.push(context,
                   //MaterialPageRoute(builder: (context) => PlacePage()));

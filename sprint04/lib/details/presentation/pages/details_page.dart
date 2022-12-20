@@ -2,13 +2,14 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:clicktravel/home/models/place_element.dart';
+//import 'package:clicktravel/home/models/place_element.dart';
 
 class PlacePage extends StatelessWidget {
   //final int index;
-  PlaceElement place = new PlaceElement();
+  //PlaceElement place = new PlaceElement();
+  String placeName = "";
 
-  PlacePage({Key key, this.place}) : super(key: key);
+  PlacePage({Key key, this.placeName}) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class PlacePage extends StatelessWidget {
           alignment: Alignment.topLeft,
           children: [
             Image.network(
-              place.placeImageUrl,
+              //place.placeImageUrl,
               fit: BoxFit.cover,
               width: double.infinity,
               //height: _size.height / 1.25,

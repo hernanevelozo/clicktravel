@@ -1,57 +1,108 @@
 import 'package:firebase_database/firebase_database.dart';
 
-import 'package:clicktravel/search/models/place_element.dart';
+import 'package:clicktravel/details/models/package_element.dart';
 
-class SearchOperations {
-  SearchOperations searchOperations;
+class DetailsOperations {
+  DetailsOperations detailsOperations;
+  //HomeOperations homeOperations;
 
-  Future<List<PlaceElement>> getAllPlaces() async {
-    var placeList = new List<PlaceElement>();
+  //Future<List<PlaceElement>> getAllPlaces() async {
+    //var placeList = new List<PlaceElement>();
+    //final ref = FirebaseDatabase.instance.ref();
+    //final snapshot = await ref.child('places').get();
+
+    //if (snapshot.exists) {
+      //List values = snapshot.value;
+
+      //var key = 0;
+      //for (var i in values) {
+        //placeList.add(PlaceElement.fromMap(i, key));
+        //key++;
+      //}
+    //} else {
+      //print('No data available.');
+    //}
+
+    //return placeList;
+  //}
+  Future<List<PackageElement>> getPackages(String keyword) async {
+    var packageList = new List<PackageElement>();
     final ref = FirebaseDatabase.instance.ref();
-    final snapshot = await ref.child('places').get();
+    final snapshot = await ref.child('places/${keyword}/packages/').get();
 
-          //print(keyword);
     print(snapshot.value);
-
 
     if (snapshot.exists) {
       List values = snapshot.value;
-
+      print(keyword);
       print(values.length);
       print(values[0].runtimeType);
 
-      var key = 0;
+      //var key = 0;
       for (var i in values) {
-        //print("bo");
-        placeList.add(PlaceElement.fromMap(i, key));
-        key++;
+        //PackageElement.fromMap(i).show();
+        //print('boo');
+        //final j = PackageElement.fromMap(i);
+        //j.show();
+        //print(PackageElement())
+        print("booo");
+
+        packageList.add(PackageElement.fromMap(i));
+        //key++;
       }
     } else {
       print('No data available.');
     }
 
-    return placeList;
-  }
-
-  Future<List<PlaceElement>> searchPlaces(String keyword) async {
-    var placeList = new List<PlaceElement>();
-
-    //print('tt');
-
-    List<PlaceElement> allPlaces = await getAllPlaces();
-    //print('tt');
-    //print(allPlaces.length.toString());
-
-    for (var i in allPlaces) {
-      if (i.placeName.contains(keyword)) {
-        i.show();
-        placeList.add(i);
-      }
-    }
-
-    return placeList;
+    return packageList;
   }
 }
+
+  //Future<PlaceElement> getPakcages(String keyword) async {
+    ////var placeList = new List<PlaceElement>();
+
+    ////print('tt');
+    //final ref = FirebaseDatabase.instance.ref();
+    ////final snapshot = await ref.child('places/$').orderByChild('placeName').equalTo(keyword);
+    //final snapshot = await ref.child('places/$keyword/packages');
+
+    //PlaceElement place;
+
+    //return place;
+
+    ////List<PlaceElement> allPlaces = await getAllPlaces();
+    ////print('tt');
+    ////print(allPlaces.length.toString());
+
+    ////for (var i in allPlaces) {
+      ////if (i.placeName.contains(keyword)) {
+        ////i.show();
+        ////placeList.add(i);
+      ////}
+    ////}
+
+    ////return placeList;
+  //}
+//}
+
+  //Future<List<PlaceElement>> searchPlaces(String keyword) async {
+    //var placeList = new List<PlaceElement>();
+
+    //print('tt');
+
+    //List<PlaceElement> allPlaces = await getAllPlaces();
+    ////print('tt');
+    ////print(allPlaces.length.toString());
+
+    //for (var i in allPlaces) {
+      //if (i.placeName.contains(keyword)) {
+        //i.show();
+        //placeList.add(i);
+      //}
+    //}
+
+    //return placeList;
+  //}
 //final ref = FirebaseDatabase.instance.ref();
 //final ref = FirebaseDatabase.instance.ref();
 //final snapshot = await ref.child('places').get();
