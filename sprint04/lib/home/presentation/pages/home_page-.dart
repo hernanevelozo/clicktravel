@@ -63,9 +63,10 @@ class _HomeState extends State<Home> {
                     ),
                     fit: BoxFit.cover,
                   ),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(35),
-                      bottomRight: Radius.circular(35))),
+                  //borderRadius: BorderRadius.only(
+                      //bottomLeft: Radius.circular(35),
+                      //bottomRight: Radius.circular(35))
+                  ),
                   child: Column(
                         children: [
                           //Text("Put your Text Here!!!!"),

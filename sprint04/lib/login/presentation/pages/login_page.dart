@@ -1,8 +1,12 @@
 import 'package:clicktravel/login/presentation/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 
-import './login_page.dart';
-import 'package:clicktravel/share/navBar.dart';
+import 'package:clicktravel/home/presentation/pages/home_page-.dart';
+import 'package:clicktravel/login/database/login_operations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+//import 'package:clicktravel/login/models/user_element.dart';
+//import './login_page.dart';
+//import 'package:clicktravel/share/navBar.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -10,7 +14,26 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final _prefs = SharedPreferences.getInstance();
+  
+  void _login(String userEmail) async {
+    Future<bool> contains = _prefs.then((SharedPreferences prefs) {
+      return prefs.containsKey('userId');
+    });
+  
+    if (await contains) {
+      int userId = await LoginOperations().getUserId(userEmail);
+      await _prefs.then((SharedPreferences prefs) {prefs.setInt('userId', userId);});
+    }
+  }
+
+  LoginOperations loginOperations = LoginOperations();
+  final TextEditingController email = TextEditingController();
+  final TextEditingController password = TextEditingController();
+  var valid = 0;
+
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       //resizeToAvoidBottomInset: false,
@@ -80,10 +103,12 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                       Expanded(
-                        child: TextField(
+                        child: TextFormField(
                           decoration: InputDecoration(
                             hintText: "Usuário",
                           ),
+                          obscureText: false,
+                          controller: email,
                         ),
                       )
                     ],
@@ -103,51 +128,18 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                       Expanded(
-                        child: TextField(
+                        child: TextFormField(
                           decoration: InputDecoration(
                             hintText: "Senha",
                           ),
+                          obscureText: true,
+                          controller: password,
                         ),
                       )
                     ],
                   ),
                 ),
 
-
-                //Row(
-                  //crossAxisAlignment: CrossAxisAlignment.center,
-                  //children: <Widget>[
-                    //Padding(
-                      //padding: const EdgeInsets.only(right: 16),
-                      //child: Icon(
-                        //Icons.lock,
-                        //color: Colors.blue,
-                      //),
-                    //),
-                    //Expanded(
-                      //child: TextField(
-                        //decoration: InputDecoration(
-                          //hintText: "Senha",
-                        //),
-                      //),
-                    //),
-                  //],
-                //),
-
-                //Row(
-                  //children: <Widget>[
-                    //Padding(
-                      //padding: const EdgeInsets.only(top: 40),
-                    //),
-                    //Expanded(
-                      //child: Text(
-                        //"Esqueceu sua senha?",
-                        //textAlign: TextAlign.right,
-                        //style: Theme.of(context).textTheme.button,
-                      //),
-                    //),
-                  //],
-                //),
 
                 Column(
                   children: [
@@ -166,7 +158,40 @@ class _LoginState extends State<Login> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          //FutureBuilder<bool>(
+                            //future: loginOperations.validateUser(user_info),
+                            //builder: (context, snapshot) {
+                              //if (snapshot.data) {
+                                //return true;
+                              //}
+                              //else {
+                                //return false);
+                              //}
+                            //}
+                          //);
+
+                          void validateUser() async {
+                            //return true;
+                            if (await loginOperations.validateUser({'email': '${email.text}', 'password': '${password.text}'})) {
+                              _login(email.text);
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+                              setState(() {
+                                valid = 2;
+                              });
+                            }
+                            //else {
+                              //Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+                            //}
+                          }
+
+                          validateUser();
+
+                          setState(() {
+                            valid = 1;
+                          });
+
+                        },
                         child: Text("Acessar", style: TextStyle(
                           fontSize: 16,
                           letterSpacing: 2.2,
@@ -176,6 +201,25 @@ class _LoginState extends State<Login> {
                     ),
                   ],
                 ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      if (valid == 0)
+                        Text(""),
+                        //Text("Login concluído!", textAlign: TextAlign.center,),
+                      if (valid == 1)
+                        Text("Dados inválidos!", textAlign: TextAlign.center, style: TextStyle(color: Colors.red),),
+
+                      if (valid == 2)
+                        Text("Login concluído!", textAlign: TextAlign.center, style: TextStyle(color: Colors.green),),
+                    ],
+                  ),),
+                ),
+
                 Column(children: <Widget>[
                   SizedBox(height: 15),
                   Row(
@@ -206,3 +250,40 @@ class _LoginState extends State<Login> {
     ),),);
   }
 }
+
+
+                          //return Container(child: Row(children: [Text("Dado Inválidos!")],));
+
+                          
+                         
+                          //if (validateUser())
+                          //Navigator.push(context, MaterialPageRoute(builder: (context) => 
+                                //FutureBuilder<bool>(
+                                  //future: loginOperations.validateUser({'email': '${email.text}', 'password': '${password.text}'}),
+                                  //builder: (context, snapshot) {
+                                    //if (snapshot.data) {
+                                      ////return Navigator.push(context, MaterialPageRoute(builder: (context) => Home();
+                                      //return Home();
+                                    //}
+                                    //else {
+                                      ////return Container(child: Row(children: [Text("Dados inválidos")],));
+                                      //return Login();
+                                    //}
+                                  //}
+                                //);
+                              //));
+
+                                //FutureBuilder<bool>(
+                                  //future: loginOperations.validateUser({'email': '${email.text}', 'password': '${password.text}'}),
+                                  //builder: (context, snapshot) {
+                                    //if (snapshot.data) {
+                                      ////return Navigator.push(context, MaterialPageRoute(builder: (context) => Home();
+                                      //return Home();
+                                    //}
+                                    //else {
+                                      //return Container(child: Row(children: [Text("Dados inválidos")],));
+                                    //}
+                                  //}
+                                //);
+
+                          //));

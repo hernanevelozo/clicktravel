@@ -1,6 +1,7 @@
+import 'package:clicktravel/login/database/signup_operations.dart';
 import 'package:flutter/material.dart';
 
-import 'package:clicktravel/share/navBar.dart';
+import 'package:clicktravel/login/database/login_operations.dart';
 
 class Signup extends StatefulWidget {
   @override
@@ -8,6 +9,14 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
+  SignupOperations signupOperations = SignupOperations();
+
+  final TextEditingController cpf = TextEditingController();
+  final TextEditingController email = TextEditingController();
+  final TextEditingController name = TextEditingController();
+  final TextEditingController password = TextEditingController();
+  final TextEditingController phone = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,10 +67,12 @@ class _SignupState extends State<Signup> {
                     children: <Widget>[
 
                       Expanded(
-                        child: TextField(
+                        child: TextFormField(
                           decoration: InputDecoration(
                             hintText: "Nome",
                           ),
+                          obscureText: false,
+                          controller: name,
                         ),
                       )
                     ],
@@ -75,10 +86,12 @@ class _SignupState extends State<Signup> {
                     children: <Widget>[
 
                       Expanded(
-                        child: TextField(
+                        child: TextFormField(
                           decoration: InputDecoration(
                             hintText: "CPF",
                           ),
+                          obscureText: false,
+                          controller: cpf,
                         ),
                       )
                     ],
@@ -92,10 +105,12 @@ class _SignupState extends State<Signup> {
                     children: <Widget>[
 
                       Expanded(
-                        child: TextField(
+                        child: TextFormField(
                           decoration: InputDecoration(
                             hintText: "Email",
                           ),
+                          obscureText: false,
+                          controller: email,
                         ),
                       )
                     ],
@@ -109,10 +124,12 @@ class _SignupState extends State<Signup> {
                     children: <Widget>[
 
                       Expanded(
-                        child: TextField(
+                        child: TextFormField(
                           decoration: InputDecoration(
                             hintText: "Telefone",
                           ),
+                          obscureText: false,
+                          controller: phone,
                         ),
                       )
                     ],
@@ -126,10 +143,12 @@ class _SignupState extends State<Signup> {
                     children: <Widget>[
 
                       Expanded(
-                        child: TextField(
+                        child: TextFormField(
                           decoration: InputDecoration(
                             hintText: "Senha",
                           ),
+                          obscureText: true,
+                          controller: password,
                         ),
                       )
                     ],
@@ -153,7 +172,16 @@ class _SignupState extends State<Signup> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          void createUser() async {
+                            await signupOperations.createUser({'userCPF': cpf.text, 'userEmail': email.text, 'userName': name.text, 'userPassword': password.text, 'userPhone': phone.text});
+                          }
+
+                          createUser();
+
+                          Navigator.pop(context);
+                          
+                        },
                         child: Text("Cadastrar", style: TextStyle(
                           fontSize: 16,
                           letterSpacing: 2.2,

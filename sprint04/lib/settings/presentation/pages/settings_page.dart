@@ -1,5 +1,7 @@
 //import 'package:flutter/cupertino.dart';
+import 'package:clicktravel/main.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'personal_page.dart';
 import 'contact_page.dart';
@@ -14,6 +16,35 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+  final _prefs = SharedPreferences.getInstance();
+  
+  void _refreshUserId() async {
+    Future<bool> contains = _prefs.then((SharedPreferences prefs) {
+      return prefs.containsKey('userId');
+    });
+
+    if (await contains) {
+      await _prefs.then((SharedPreferences prefs) {prefs.setInt('userId', -1);});
+    }
+  }
+
+  signOut() async {
+    //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Login()));
+
+    //Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+    //Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => Login()), (Route<dynamic> route) => false);
+    Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => Login()), ModalRoute.withName('/'));
+  }
+  //void _refreshUserId() async {
+    ////Future<bool> contains = _prefs.then((SharedPreferences prefs) {
+      ////return prefs.containsKey('userId');
+    ////});
+
+    ////if (! await contains) {
+    //await _prefs.then((SharedPreferences prefs) {prefs.setInt('userId', -1);});
+    ////}
+  //}
+
   bool valNotify1 = true;
   bool valNotify2 = false;
   bool valNotify3 = false;
@@ -49,7 +80,6 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavBar(index: 2),
-      //backgroundColor: Color(0xf9f9f9ff),
       backgroundColor: Colors.white,
       body: Container(
           padding: const EdgeInsets.all(10),
@@ -80,77 +110,42 @@ class _SettingsState extends State<Settings> {
                 height: 10,
               ),
 
-              SizedBox(
-                //mainAxisSize: MainAxisSize.max, 
-                width: double.infinity, // <-- match_parent,  
-                height: 45, // <-- match_parent,  
-                //children: [
-                  //Icon(
-                    //Icons.person,
-                    //color: Colors.blue,
-                  //),
-                  //SizedBox(
-                    //width: 10,
-                  //),
-                  //Text("Informações Pessoais",
-                      //style:
-                          //TextStyle(fontSize: 20))
-                  child: TextButton(
-                    //MainAxisSize: MainAxisAlignment.spaceBetween,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      //primary: Colors.black,
-                      //minimumSize: const Size.fromWidth(90), // NEW
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                      Text('Informações Pessoais',
-                        style: TextStyle(color: Colors.black, fontSize: 18),
-                        ),
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.blue,
-                      ),
-                    ],),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Personal()));
-                  },
-                    ),
-                //],
-              ),
-
-              Divider(
-                height: 10,
-                thickness: 1,
-              ),
-
               //SizedBox(
+                //width: double.infinity, // <-- match_parent,  
+                //height: 45, // <-- match_parent,  
+                  //child: TextButton(
+                    //style: ElevatedButton.styleFrom(
+                      //backgroundColor: Colors.white,
+                    //),
+                    //child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //children: <Widget>[
+                      //Text('Informações Pessoais',
+                        //style: TextStyle(color: Colors.black, fontSize: 18),
+                        //),
+                      //Icon(
+                        //Icons.arrow_forward_ios,
+                        //color: Colors.blue,
+                      //),
+                    //],),
+                  //onPressed: () {
+                    //Navigator.push(context,
+                        //MaterialPageRoute(builder: (context) => Personal()));
+                  //},
+                    //),
+              //),
+
+              //Divider(
                 //height: 10,
+                //thickness: 1,
               //),
 
               SizedBox(
-                //mainAxisSize: MainAxisSize.max, 
                 width: double.infinity, // <-- match_parent,  
                 height: 45, // <-- match_parent,  
-                //children: [
-                  //Icon(
-                    //Icons.person,
-                    //color: Colors.blue,
-                  //),
-                  //SizedBox(
-                    //width: 10,
-                  //),
-                  //Text("Informações Pessoais",
-                      //style:
-                          //TextStyle(fontSize: 20))
                   child: TextButton(
-                    //MainAxisSize: MainAxisAlignment.spaceBetween,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
-                      //primary: Colors.black,
-                      //minimumSize: const Size.fromWidth(90), // NEW
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -168,55 +163,19 @@ class _SettingsState extends State<Settings> {
                         MaterialPageRoute(builder: (context) => Contact()));
                   },
                     ),
-                //],
               ),
 
-
-              //Row(
-                //children: [
-                  ////Icon(
-                    ////Icons.person,
-                    ////color: Colors.blue,
-                  ////),
-                  ////SizedBox(
-                    ////width: 10,
-                  ////),
-                  //Text("Dados de Contato",
-                      //style:
-                          //TextStyle(fontSize: 20))
-                //],
-              //),
-              
               Divider(
                 height: 10,
                 thickness: 1,
               ),
 
-              //SizedBox(
-                //height: 10,
-              //),
-
               SizedBox(
-                //mainAxisSize: MainAxisSize.max, 
                 width: double.infinity, // <-- match_parent,  
                 height: 45, // <-- match_parent,  
-                //children: [
-                  //Icon(
-                    //Icons.person,
-                    //color: Colors.blue,
-                  //),
-                  //SizedBox(
-                    //width: 10,
-                  //),
-                  //Text("Informações Pessoais",
-                      //style:
-                          //TextStyle(fontSize: 20))
                   child: TextButton(
-                    //MainAxisSize: MainAxisAlignment.spaceBetween,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
-                      //primary: Colors.black,
-                      //minimumSize: const Size.fromWidth(90), // NEW
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -234,36 +193,13 @@ class _SettingsState extends State<Settings> {
                         MaterialPageRoute(builder: (context) => Credentials()));
                   },
                     ),
-                //],
               ),
 
-
-              //Row(
-                //children: [
-                  ////Icon(
-                    ////Icons.person,
-                    ////color: Colors.blue,
-                  ////),
-                  ////SizedBox(
-                    ////width: 10,
-                  ////),
-                  //Text("Credenciais",
-                      //style:
-                          //TextStyle(fontSize: 20))
-                //],
-              //),
-              
               Divider(
                 height: 10,
                 thickness: 1,
               ),
 
-              //buildAccountOption(context, "Usuário"),
-              //buildAccountOption(context, "Alterar Senha"),
-              //buildAccountOption(context, "Conteúdo"),
-              //buildAccountOption(context, "Social"),
-              //buildAccountOption(context, "Idioma"),
-              //buildAccountOption(context, "Privacidade e Segurança"),
               SizedBox(height: 20,),
               Center(
                 child: OutlinedButton(
@@ -273,8 +209,11 @@ class _SettingsState extends State<Settings> {
                         borderRadius: BorderRadius.circular(20),
                       )),
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Login()));
+                    _refreshUserId();
+                    signOut();
+                    //Navigator.push(context,
+                        //MaterialPageRoute(builder: (context) => MyApp()));
+                    //Navigator.popUntil(context, MyApp());
                   },
                   child: Text("Sair",
                       style: TextStyle(
@@ -289,61 +228,6 @@ class _SettingsState extends State<Settings> {
                 height: 40,
               ),
 
-              //Row(
-                //children: [
-                  //Icon(
-                    //Icons.volume_up_outlined,
-                    //color: Colors.blue,
-                  //),
-                  //SizedBox(
-                    //width: 10,
-                  //),
-                  //Text("Notificações",
-                      //style:
-                          //TextStyle(fontSize: 22, fontWeight: FontWeight.bold))
-                //],
-              //),
-
-              //Divider(height: 20, thickness: 1),
-
-              //SizedBox(
-                //height: 10,
-              //),
-
-              //buildNotificationOption(
-                  //"Ofertas", valNotify1, onChangedFunction1),
-              //buildNotificationOption(
-                  //"Novidades", valNotify2, onChangedFunction2),
-              //buildNotificationOption(
-                  //"Recomendações", valNotify3, onChangedFunction3),
-
-              //SizedBox(
-                //height: 40,
-              //),
-
-              //Row(
-                //children: [
-                  //Icon(
-                    //Icons.more,
-                    //color: Colors.blue,
-                  //),
-                  //SizedBox(
-                    //width: 10,
-                  //),
-                  //Text("Opções",
-                      //style:
-                          //TextStyle(fontSize: 22, fontWeight: FontWeight.bold))
-                //],
-              //),
-
-              //Divider(height: 20, thickness: 1),
-
-              //SizedBox(
-                //height: 10,
-              //),
-
-              //buildNotificationOption(
-                  //"Modo Escuro", valNotify4, onChangedFunction4),
             ],
           )),
     );
